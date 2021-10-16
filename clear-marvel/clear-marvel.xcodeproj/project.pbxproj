@@ -13,9 +13,11 @@
 		CD65A3B3271B81A800249530 /* GetCharacters.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD65A3B2271B81A800249530 /* GetCharacters.swift */; };
 		CD65A3B7271B852000249530 /* CharacterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD65A3B6271B852000249530 /* CharacterModel.swift */; };
 		CD65A3C8271B85D900249530 /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD65A3BF271B85D900249530 /* Data.framework */; };
-		CD65A3CD271B85D900249530 /* DataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD65A3CC271B85D900249530 /* DataTests.swift */; };
 		CD65A3DF271B861200249530 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD65A399271B77CA00249530 /* Domain.framework */; };
 		CD65A3E0271B861200249530 /* Domain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CD65A399271B77CA00249530 /* Domain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CD65A3EB271B86C000249530 /* RemoteGetCharactersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD65A3EA271B86C000249530 /* RemoteGetCharactersTests.swift */; };
+		CD65A3F3271B934900249530 /* RemoteGetCharacters.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD65A3F2271B934900249530 /* RemoteGetCharacters.swift */; };
+		CD65A3F8271B936900249530 /* HttpGetRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD65A3F7271B936900249530 /* HttpGetRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,8 +70,10 @@
 		CD65A3BF271B85D900249530 /* Data.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Data.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD65A3C2271B85D900249530 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD65A3C7271B85D900249530 /* DataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CD65A3CC271B85D900249530 /* DataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTests.swift; sourceTree = "<group>"; };
 		CD65A3CE271B85D900249530 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD65A3EA271B86C000249530 /* RemoteGetCharactersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteGetCharactersTests.swift; sourceTree = "<group>"; };
+		CD65A3F2271B934900249530 /* RemoteGetCharacters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteGetCharacters.swift; sourceTree = "<group>"; };
+		CD65A3F7271B936900249530 /* HttpGetRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpGetRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +158,8 @@
 			isa = PBXGroup;
 			children = (
 				CD65A3C2271B85D900249530 /* Info.plist */,
+				CD65A3F2271B934900249530 /* RemoteGetCharacters.swift */,
+				CD65A3F7271B936900249530 /* HttpGetRequest.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -161,8 +167,8 @@
 		CD65A3CB271B85D900249530 /* DataTests */ = {
 			isa = PBXGroup;
 			children = (
-				CD65A3CC271B85D900249530 /* DataTests.swift */,
 				CD65A3CE271B85D900249530 /* Info.plist */,
+				CD65A3EA271B86C000249530 /* RemoteGetCharactersTests.swift */,
 			);
 			path = DataTests;
 			sourceTree = "<group>";
@@ -287,9 +293,11 @@
 					};
 					CD65A3BE271B85D900249530 = {
 						CreatedOnToolsVersion = 12.2;
+						LastSwiftMigration = 1220;
 					};
 					CD65A3C6271B85D900249530 = {
 						CreatedOnToolsVersion = 12.2;
+						LastSwiftMigration = 1220;
 					};
 				};
 			};
@@ -367,6 +375,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD65A3F8271B936900249530 /* HttpGetRequest.swift in Sources */,
+				CD65A3F3271B934900249530 /* RemoteGetCharacters.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,7 +384,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD65A3CD271B85D900249530 /* DataTests.swift in Sources */,
+				CD65A3EB271B86C000249530 /* RemoteGetCharactersTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -612,6 +622,7 @@
 		CD65A3D1271B85D900249530 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -629,6 +640,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = dev.marcosbarbosa.Data;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -636,6 +648,7 @@
 		CD65A3D2271B85D900249530 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -660,6 +673,8 @@
 		CD65A3D4271B85D900249530 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = L682628XMT;
@@ -671,6 +686,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = dev.marcosbarbosa.DataTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -678,6 +694,8 @@
 		CD65A3D5271B85D900249530 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = L682628XMT;
