@@ -8,7 +8,7 @@
 import Foundation
 
 public enum UrlCreatorEndpoint: String {
-    case comics         = "/v1/public/comics?"
-    case characters     = "/v1/public/characters?"
+    case comics         = "comics?"
+    case characters     = "characters?"
     case invalid        = ""
 }

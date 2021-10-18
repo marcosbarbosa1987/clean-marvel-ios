@@ -18,6 +18,15 @@ public class RemoteGetCharacters {
     }
     
     public func get() {
-        httpGetRequest.get(from: url)
+        httpGetRequest.get(from: url) { (result) in
+            
+            switch result {
+            case .success:
+                break
+                
+            case .failure:
+                break
+            }
+        }
     }
 }
