@@ -8,5 +8,5 @@
 import Foundation
 
 public protocol HttpGetRequest {
-    func get(url: URL)
+    func get(from url: URL)
 }

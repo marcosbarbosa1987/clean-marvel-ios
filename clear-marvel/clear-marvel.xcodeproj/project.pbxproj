@@ -7,9 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD026F91271CF80600F1AD64 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD026F90271CF80600F1AD64 /* Date+Extensions.swift */; };
+		CD026F9A271CF86100F1AD64 /* MD5Generator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD026F99271CF86100F1AD64 /* MD5Generator.swift */; };
+		CD026FA9271CF8CC00F1AD64 /* EnumConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD026FA8271CF8CC00F1AD64 /* EnumConstants.swift */; };
+		CD026FB1271CF8F100F1AD64 /* UrlCreatorEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD026FB0271CF8F100F1AD64 /* UrlCreatorEndpoint.swift */; };
+		CD026FBD271CF97B00F1AD64 /* UrlCreatorEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD026FB0271CF8F100F1AD64 /* UrlCreatorEndpoint.swift */; };
+		CD026FC1271CF99200F1AD64 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD026F90271CF80600F1AD64 /* Date+Extensions.swift */; };
+		CD026FD5271CFA1A00F1AD64 /* RemoteGetCharacters.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD65A3F2271B934900249530 /* RemoteGetCharacters.swift */; };
+		CD026FD9271CFA1D00F1AD64 /* UrlCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD65A40F271C75FC00249530 /* UrlCreator.swift */; };
+		CD026FDD271CFA2700F1AD64 /* HttpGetRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD65A3F7271B936900249530 /* HttpGetRequest.swift */; };
+		CD026FDE271CFA2700F1AD64 /* MD5Generator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD026F99271CF86100F1AD64 /* MD5Generator.swift */; };
 		CD65A3A2271B77CA00249530 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD65A399271B77CA00249530 /* Domain.framework */; };
 		CD65A3A7271B77CA00249530 /* DomainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD65A3A6271B77CA00249530 /* DomainTests.swift */; };
-		CD65A3A9271B77CA00249530 /* Domain.h in Headers */ = {isa = PBXBuildFile; fileRef = CD65A39B271B77CA00249530 /* Domain.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD65A3B3271B81A800249530 /* GetCharacters.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD65A3B2271B81A800249530 /* GetCharacters.swift */; };
 		CD65A3B7271B852000249530 /* CharacterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD65A3B6271B852000249530 /* CharacterModel.swift */; };
 		CD65A3C8271B85D900249530 /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD65A3BF271B85D900249530 /* Data.framework */; };
@@ -18,6 +27,8 @@
 		CD65A3EB271B86C000249530 /* RemoteGetCharactersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD65A3EA271B86C000249530 /* RemoteGetCharactersTests.swift */; };
 		CD65A3F3271B934900249530 /* RemoteGetCharacters.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD65A3F2271B934900249530 /* RemoteGetCharacters.swift */; };
 		CD65A3F8271B936900249530 /* HttpGetRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD65A3F7271B936900249530 /* HttpGetRequest.swift */; };
+		CD65A40B271BC38C00249530 /* UrlCreatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD65A40A271BC38C00249530 /* UrlCreatorTest.swift */; };
+		CD65A410271C75FC00249530 /* UrlCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD65A40F271C75FC00249530 /* UrlCreator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,8 +70,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CD026F90271CF80600F1AD64 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
+		CD026F99271CF86100F1AD64 /* MD5Generator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MD5Generator.swift; sourceTree = "<group>"; };
+		CD026FA8271CF8CC00F1AD64 /* EnumConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumConstants.swift; sourceTree = "<group>"; };
+		CD026FB0271CF8F100F1AD64 /* UrlCreatorEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlCreatorEndpoint.swift; sourceTree = "<group>"; };
 		CD65A399271B77CA00249530 /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CD65A39B271B77CA00249530 /* Domain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Domain.h; sourceTree = "<group>"; };
 		CD65A39C271B77CA00249530 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD65A3A1271B77CA00249530 /* DomainTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DomainTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD65A3A6271B77CA00249530 /* DomainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainTests.swift; sourceTree = "<group>"; };
@@ -74,6 +88,8 @@
 		CD65A3EA271B86C000249530 /* RemoteGetCharactersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteGetCharactersTests.swift; sourceTree = "<group>"; };
 		CD65A3F2271B934900249530 /* RemoteGetCharacters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteGetCharacters.swift; sourceTree = "<group>"; };
 		CD65A3F7271B936900249530 /* HttpGetRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpGetRequest.swift; sourceTree = "<group>"; };
+		CD65A40A271BC38C00249530 /* UrlCreatorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlCreatorTest.swift; sourceTree = "<group>"; };
+		CD65A40F271C75FC00249530 /* UrlCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlCreator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +127,51 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CD026F8D271CF7C000F1AD64 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				CD026F8F271CF7EE00F1AD64 /* Extensions */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		CD026F8E271CF7CF00F1AD64 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				CD026FA7271CF8BB00F1AD64 /* Enums */,
+				CD026FD1271CF9DC00F1AD64 /* Protocols */,
+				CD65A3F2271B934900249530 /* RemoteGetCharacters.swift */,
+				CD65A40F271C75FC00249530 /* UrlCreator.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		CD026F8F271CF7EE00F1AD64 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CD026F90271CF80600F1AD64 /* Date+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		CD026FA7271CF8BB00F1AD64 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				CD026FA8271CF8CC00F1AD64 /* EnumConstants.swift */,
+				CD026FB0271CF8F100F1AD64 /* UrlCreatorEndpoint.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		CD026FD1271CF9DC00F1AD64 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				CD65A3F7271B936900249530 /* HttpGetRequest.swift */,
+				CD026F99271CF86100F1AD64 /* MD5Generator.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		CD65A36A271B6FDF00249530 = {
 			isa = PBXGroup;
 			children = (
@@ -137,7 +198,6 @@
 		CD65A39A271B77CA00249530 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				CD65A39B271B77CA00249530 /* Domain.h */,
 				CD65A39C271B77CA00249530 /* Info.plist */,
 				CD65A3B2271B81A800249530 /* GetCharacters.swift */,
 				CD65A3B6271B852000249530 /* CharacterModel.swift */,
@@ -157,9 +217,9 @@
 		CD65A3C0271B85D900249530 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				CD026F8E271CF7CF00F1AD64 /* UseCases */,
+				CD026F8D271CF7C000F1AD64 /* Helpers */,
 				CD65A3C2271B85D900249530 /* Info.plist */,
-				CD65A3F2271B934900249530 /* RemoteGetCharacters.swift */,
-				CD65A3F7271B936900249530 /* HttpGetRequest.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -169,6 +229,7 @@
 			children = (
 				CD65A3CE271B85D900249530 /* Info.plist */,
 				CD65A3EA271B86C000249530 /* RemoteGetCharactersTests.swift */,
+				CD65A40A271BC38C00249530 /* UrlCreatorTest.swift */,
 			);
 			path = DataTests;
 			sourceTree = "<group>";
@@ -187,7 +248,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD65A3A9271B77CA00249530 /* Domain.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,8 +435,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD026FA9271CF8CC00F1AD64 /* EnumConstants.swift in Sources */,
+				CD026FB1271CF8F100F1AD64 /* UrlCreatorEndpoint.swift in Sources */,
 				CD65A3F8271B936900249530 /* HttpGetRequest.swift in Sources */,
+				CD026F91271CF80600F1AD64 /* Date+Extensions.swift in Sources */,
 				CD65A3F3271B934900249530 /* RemoteGetCharacters.swift in Sources */,
+				CD026F9A271CF86100F1AD64 /* MD5Generator.swift in Sources */,
+				CD65A410271C75FC00249530 /* UrlCreator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,7 +449,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD026FDD271CFA2700F1AD64 /* HttpGetRequest.swift in Sources */,
+				CD026FBD271CF97B00F1AD64 /* UrlCreatorEndpoint.swift in Sources */,
+				CD026FDE271CFA2700F1AD64 /* MD5Generator.swift in Sources */,
+				CD65A40B271BC38C00249530 /* UrlCreatorTest.swift in Sources */,
+				CD026FD9271CFA1D00F1AD64 /* UrlCreator.swift in Sources */,
 				CD65A3EB271B86C000249530 /* RemoteGetCharactersTests.swift in Sources */,
+				CD026FC1271CF99200F1AD64 /* Date+Extensions.swift in Sources */,
+				CD026FD5271CFA1A00F1AD64 /* RemoteGetCharacters.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

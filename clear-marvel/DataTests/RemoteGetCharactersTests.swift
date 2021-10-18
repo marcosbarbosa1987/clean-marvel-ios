@@ -7,6 +7,7 @@
 
 import XCTest
 import Data
+import CommonCrypto
 
 class RemoteGetCharactersTests: XCTestCase {
     
@@ -23,7 +24,9 @@ class HttpGetRequestSpy: HttpGetRequest {
     
     var url: URL?
     
-    func get(url: URL) {
+    func get(from url: URL) {
         self.url = url
     }
 }
+
+

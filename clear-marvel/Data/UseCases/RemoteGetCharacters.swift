@@ -18,6 +18,6 @@ public class RemoteGetCharacters {
     }
     
     public func get() {
-        httpGetRequest.get(url: url)
+        httpGetRequest.get(from: url)
     }
 }
