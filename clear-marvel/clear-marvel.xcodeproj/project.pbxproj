@@ -17,6 +17,11 @@
 		CD026FD9271CFA1D00F1AD64 /* UrlCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD65A40F271C75FC00249530 /* UrlCreator.swift */; };
 		CD026FDD271CFA2700F1AD64 /* HttpGetRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD65A3F7271B936900249530 /* HttpGetRequest.swift */; };
 		CD026FDE271CFA2700F1AD64 /* MD5Generator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD026F99271CF86100F1AD64 /* MD5Generator.swift */; };
+		CD026FE4271E5EBD00F1AD64 /* DomainError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD026FE3271E5EBD00F1AD64 /* DomainError.swift */; };
+		CD026FED271E69EF00F1AD64 /* HttpError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD026FEC271E69EF00F1AD64 /* HttpError.swift */; };
+		CD026FF4271E6A2A00F1AD64 /* HttpError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD026FEC271E69EF00F1AD64 /* HttpError.swift */; };
+		CD026FFB271FA23100F1AD64 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD026FFA271FA23100F1AD64 /* Model.swift */; };
+		CD027005271FA30B00F1AD64 /* Data+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD027004271FA30B00F1AD64 /* Data+Extension.swift */; };
 		CD65A3A2271B77CA00249530 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD65A399271B77CA00249530 /* Domain.framework */; };
 		CD65A3A7271B77CA00249530 /* DomainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD65A3A6271B77CA00249530 /* DomainTests.swift */; };
 		CD65A3B3271B81A800249530 /* GetCharacters.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD65A3B2271B81A800249530 /* GetCharacters.swift */; };
@@ -74,6 +79,10 @@
 		CD026F99271CF86100F1AD64 /* MD5Generator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MD5Generator.swift; sourceTree = "<group>"; };
 		CD026FA8271CF8CC00F1AD64 /* EnumConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumConstants.swift; sourceTree = "<group>"; };
 		CD026FB0271CF8F100F1AD64 /* UrlCreatorEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlCreatorEndpoint.swift; sourceTree = "<group>"; };
+		CD026FE3271E5EBD00F1AD64 /* DomainError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainError.swift; sourceTree = "<group>"; };
+		CD026FEC271E69EF00F1AD64 /* HttpError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpError.swift; sourceTree = "<group>"; };
+		CD026FFA271FA23100F1AD64 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		CD027004271FA30B00F1AD64 /* Data+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extension.swift"; sourceTree = "<group>"; };
 		CD65A399271B77CA00249530 /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD65A39C271B77CA00249530 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD65A3A1271B77CA00249530 /* DomainTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DomainTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -172,6 +181,55 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		CD026FE2271E5E9B00F1AD64 /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				CD026FE3271E5EBD00F1AD64 /* DomainError.swift */,
+			);
+			path = Errors;
+			sourceTree = "<group>";
+		};
+		CD026FEB271E69D900F1AD64 /* Http */ = {
+			isa = PBXGroup;
+			children = (
+				CD026FEC271E69EF00F1AD64 /* HttpError.swift */,
+			);
+			path = Http;
+			sourceTree = "<group>";
+		};
+		CD026FF8271FA20500F1AD64 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CD65A3B6271B852000249530 /* CharacterModel.swift */,
+				CD026FFA271FA23100F1AD64 /* Model.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CD026FF9271FA21000F1AD64 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				CD65A3B2271B81A800249530 /* GetCharacters.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		CD027002271FA2EC00F1AD64 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				CD027003271FA2F600F1AD64 /* Extensions */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		CD027003271FA2F600F1AD64 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CD027004271FA30B00F1AD64 /* Data+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		CD65A36A271B6FDF00249530 = {
 			isa = PBXGroup;
 			children = (
@@ -198,9 +256,11 @@
 		CD65A39A271B77CA00249530 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				CD027002271FA2EC00F1AD64 /* Helpers */,
+				CD026FF9271FA21000F1AD64 /* Protocols */,
+				CD026FF8271FA20500F1AD64 /* Models */,
+				CD026FE2271E5E9B00F1AD64 /* Errors */,
 				CD65A39C271B77CA00249530 /* Info.plist */,
-				CD65A3B2271B81A800249530 /* GetCharacters.swift */,
-				CD65A3B6271B852000249530 /* CharacterModel.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -217,6 +277,7 @@
 		CD65A3C0271B85D900249530 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				CD026FEB271E69D900F1AD64 /* Http */,
 				CD026F8E271CF7CF00F1AD64 /* UseCases */,
 				CD026F8D271CF7C000F1AD64 /* Helpers */,
 				CD65A3C2271B85D900249530 /* Info.plist */,
@@ -419,7 +480,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD65A3B3271B81A800249530 /* GetCharacters.swift in Sources */,
+				CD026FE4271E5EBD00F1AD64 /* DomainError.swift in Sources */,
+				CD027005271FA30B00F1AD64 /* Data+Extension.swift in Sources */,
 				CD65A3B7271B852000249530 /* CharacterModel.swift in Sources */,
+				CD026FFB271FA23100F1AD64 /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,6 +503,7 @@
 				CD026FB1271CF8F100F1AD64 /* UrlCreatorEndpoint.swift in Sources */,
 				CD65A3F8271B936900249530 /* HttpGetRequest.swift in Sources */,
 				CD026F91271CF80600F1AD64 /* Date+Extensions.swift in Sources */,
+				CD026FED271E69EF00F1AD64 /* HttpError.swift in Sources */,
 				CD65A3F3271B934900249530 /* RemoteGetCharacters.swift in Sources */,
 				CD026F9A271CF86100F1AD64 /* MD5Generator.swift in Sources */,
 				CD65A410271C75FC00249530 /* UrlCreator.swift in Sources */,
@@ -450,6 +515,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD026FDD271CFA2700F1AD64 /* HttpGetRequest.swift in Sources */,
+				CD026FF4271E6A2A00F1AD64 /* HttpError.swift in Sources */,
 				CD026FBD271CF97B00F1AD64 /* UrlCreatorEndpoint.swift in Sources */,
 				CD026FDE271CFA2700F1AD64 /* MD5Generator.swift in Sources */,
 				CD65A40B271BC38C00249530 /* UrlCreatorTest.swift in Sources */,

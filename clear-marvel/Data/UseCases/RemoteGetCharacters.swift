@@ -6,26 +6,33 @@
 //
 
 import Foundation
+import Domain
 
 public class RemoteGetCharacters {
     
-    private let url: URL
-    private let httpGetRequest: HttpGetRequest
+    public let url: URL
+    public let httpGetRequest: HttpGetRequest
     
     public init(url: URL, httpGetRequest: HttpGetRequest) {
         self.url = url
         self.httpGetRequest = httpGetRequest
     }
     
-    public func get() {
-        httpGetRequest.get(from: url) { (result) in
+    public func get(completion: @escaping(Result<CharacterModel?, DomainError>) -> Void) {
+        httpGetRequest.get(from: url) { [weak self] (result) in
+            
+            guard self != nil else { return }
             
             switch result {
-            case .success:
-                break
+            case .success(let data):
+                if let model: CharacterModel = data?.toModel() {
+                    completion(.success(model))
+                } else {
+                    completion(.failure(.unexpected))
+                }
                 
             case .failure:
-                break
+                completion(.failure(.unexpected))
             }
         }
     }
