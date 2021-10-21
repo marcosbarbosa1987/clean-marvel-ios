@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -26,6 +26,7 @@
 		CD02701F271FB8E400F1AD64 /* AlamofireAdaptarTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD02701E271FB8E400F1AD64 /* AlamofireAdaptarTest.swift */; };
 		CD027032271FB8F500F1AD64 /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD65A3BF271B85D900249530 /* Data.framework */; };
 		CD027033271FB8F500F1AD64 /* Data.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CD65A3BF271B85D900249530 /* Data.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CD0270412720FB0700F1AD64 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = CD0270402720FB0700F1AD64 /* Alamofire */; };
 		CD65A3A2271B77CA00249530 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD65A399271B77CA00249530 /* Domain.framework */; };
 		CD65A3A7271B77CA00249530 /* DomainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD65A3A6271B77CA00249530 /* DomainTests.swift */; };
 		CD65A3B3271B81A800249530 /* GetCharacters.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD65A3B2271B81A800249530 /* GetCharacters.swift */; };
@@ -141,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD027032271FB8F500F1AD64 /* Data.framework in Frameworks */,
+				CD0270412720FB0700F1AD64 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,6 +418,9 @@
 				CD027035271FB8F500F1AD64 /* PBXTargetDependency */,
 			);
 			name = Infra;
+			packageProductDependencies = (
+				CD0270402720FB0700F1AD64 /* Alamofire */,
+			);
 			productName = Infra;
 			productReference = CD027011271FB8E400F1AD64 /* Infra.framework */;
 			productType = "com.apple.product-type.framework";
@@ -553,6 +558,9 @@
 				Base,
 			);
 			mainGroup = CD65A36A271B6FDF00249530;
+			packageReferences = (
+				CD02703F2720FB0700F1AD64 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = CD65A375271B6FDF00249530 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1163,6 +1171,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CD02703F2720FB0700F1AD64 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.4.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CD0270402720FB0700F1AD64 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CD02703F2720FB0700F1AD64 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CD65A36B271B6FDF00249530 /* Project object */;
 }
