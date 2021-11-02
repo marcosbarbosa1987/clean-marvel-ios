@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Domain
 
 func makeURL() -> URL {
     return URL(string: "http://any-url.com")!
@@ -33,4 +34,9 @@ func makeEmptyData() -> Data {
 
 func makeHttpResponse(statusCode: Int = 200) -> HTTPURLResponse {
     return HTTPURLResponse(url: makeURL(), statusCode: statusCode, httpVersion: nil, headerFields: nil)!
+}
+
+func makeCharacterModel() -> CharacterModel {
+    let data = CharacterModel(data: [])
+    return data
 }

@@ -14,26 +14,34 @@ public class HomePresenter {
     private let alertView: AlertView
     private let urlValidator: URLValidator
     private let getCharacters: GetCharacters
+    private let loadingView: LoadingView
     
-    public init(url: URL, alertView: AlertView, urlValidator: URLValidator, getCharacters: GetCharacters) {
+    public init(url: URL, alertView: AlertView, urlValidator: URLValidator, getCharacters: GetCharacters, loadingView: LoadingView) {
         self.url = url
         self.alertView = alertView
         self.urlValidator = urlValidator
         self.getCharacters = getCharacters
+        self.loadingView = loadingView
     }
     
     public func requestCharacters() {
         
         if urlValidator.isValid(url) {
             
-            getCharacters.get(url: url) { result in
+            self.loadingView.display(LoadingViewModel(isLoading: true))
+            
+            getCharacters.get(url: url) { [weak self] result in
+                
+                guard let self = self else { return }
+                
                 switch result {
                 case .success:
-                    break
+                    self.alertView.display(AlertViewModel(title: "Sucesso", message: "Recuperou os personagens da API."))
                     
                 case .failure:
                     self.alertView.display(AlertViewModel(title: "Falhou", message: "Algo inesperado aconteceu, tente novamente mais tarde."))
                 }
+                self.loadingView.display(LoadingViewModel(isLoading: false))
             }
             
         } else {

@@ -8,7 +8,7 @@
 import Foundation
 
 public protocol AlertView {
-    func display(_ model: AlertViewModel)
+    func display(_ viewModel: AlertViewModel)
 }
 
 public struct AlertViewModel: Equatable {

@@ -90,11 +90,6 @@ extension RemoteGetCharactersTests {
         wait(for: [exp], timeout: 1)
     }
     
-    func makeCharacterModel() -> CharacterModel {
-        let data = [CharacterData]()
-        return CharacterModel(data: data)
-    }
-    
     class HttpRequestSpy: HttpGetRequest {
         
         var urls: [URL] = []
