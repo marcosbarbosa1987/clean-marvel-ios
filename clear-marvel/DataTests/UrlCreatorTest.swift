@@ -104,10 +104,6 @@ extension UrlCreatorTest {
                    timestamp: Int64 = Int64()) -> UrlCreatorModel {
         return UrlCreatorModel(baseURL: baseUrl, endpoint: endpoint, privateKey: privateKey, publicKey: publicKey, timestamp: timestamp)
     }
-    
-    func makeTimestamp() -> Int64 {
-        return Date().currentTimeMillis()
-    }
 }
 
 class MD5GeneratorSpy: MD5Generator {

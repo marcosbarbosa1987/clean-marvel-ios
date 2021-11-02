@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol GetCharacters {
+public protocol GetCharacters {
     func get(url: URL, completion: @escaping(Result<[CharacterModel?]?, Error>) -> Void)
 }

@@ -13,21 +13,14 @@ import CommonCrypto
 class RemoteGetCharactersTests: XCTestCase {
     
     func test_get_should_call_httpClient_with_correct_url() {
-        let url = URL(string: "http://any-url.com")!
+        let url = makeURL()
         let (sut, _) = makeSUT()
         sut.get() { _ in }
         XCTAssertEqual(sut.url, url)
     }
     
-    func test_get_should_call_httpClient_with_incorrect_url() {
-        let url = URL(string: "http://any-url.com")!
-        let (sut, _) = makeSUT(url: URL(string: "another-url.com")!)
-        sut.get() { _ in }
-        XCTAssertNotEqual(sut.url, url)
-    }
-    
     func test_get_should_call_httpClient_completes_with_error() {
-        let (sut, httpRequestSpy) = makeSUT(url: URL(string: "another-url.com")!)
+        let (sut, httpRequestSpy) = makeSUT()
         expect(sut, completeWith: .failure(.unexpected)) {
             httpRequestSpy.completeWithError(.noConnectivity)
         }
@@ -35,7 +28,7 @@ class RemoteGetCharactersTests: XCTestCase {
     
     func test_get_should_call_httpClient_completes_with_data() {
         
-        let (sut, httpRequestSpy) = makeSUT(url: URL(string: "another-url.com")!)
+        let (sut, httpRequestSpy) = makeSUT()
         let expectedData = makeCharacterModel()
         expect(sut, completeWith: .success(makeCharacterModel())) {
             httpRequestSpy.completeWithData(expectedData.toData()!)
@@ -44,7 +37,7 @@ class RemoteGetCharactersTests: XCTestCase {
     
     func test_get_should_call_httpClient_completes_with_invalidData() {
         
-        let (sut, httpRequestSpy) = makeSUT(url: URL(string: "another-url.com")!)
+        let (sut, httpRequestSpy) = makeSUT()
         expect(sut, completeWith: .failure(.unexpected)) {
             httpRequestSpy.completeWithData(makeInvalidData())
         }
@@ -97,12 +90,9 @@ extension RemoteGetCharactersTests {
         wait(for: [exp], timeout: 1)
     }
     
-    func makeInvalidData() -> Data {
-        return Data("invalid".utf8)
-    }
-    
     func makeCharacterModel() -> CharacterModel {
-        return CharacterModel(name: "any-name", image: "any-image")
+        let data = [CharacterData]()
+        return CharacterModel(data: data)
     }
     
     class HttpRequestSpy: HttpGetRequest {

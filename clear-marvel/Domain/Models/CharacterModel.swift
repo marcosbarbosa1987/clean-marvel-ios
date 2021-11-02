@@ -8,11 +8,29 @@
 import Foundation
 
 public struct CharacterModel: Model {
-    public var name: String?
-    public var image: String?
+    public var data: [CharacterData?]?
     
-    public init(name: String?, image: String?) {
-        self.name = name
-        self.image = image
+    public init(data: [CharacterData]) {
+        self.data = data
+    }
+}
+
+public struct CharacterData: Model {
+    public var results: [CharacterResult?]?
+}
+
+public struct CharacterResult: Model {
+    public var id: Int?
+    public var name: String?
+    public var thumbnail: CharacterThumb?
+}
+
+public struct CharacterThumb: Model {
+    public var path: String?
+    public var extensionType: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case path = "path"
+        case extensionType = "extension"
     }
 }
