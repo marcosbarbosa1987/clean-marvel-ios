@@ -13,6 +13,7 @@ public protocol MD5Generator {
 }
 
 extension MD5Generator {
+    
     public func MD5(from string: String) -> String {
         let lenght = Int(CC_MD5_DIGEST_LENGTH)
         var digest = [UInt8](repeating: 0, count: lenght)
