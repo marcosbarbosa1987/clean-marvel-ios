@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -11,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="UI" customModuleProvider="target">
             <connections>
                 <outlet property="loadingIndicator" destination="2kI-vG-knx" id="PbT-bx-wYY"/>
+                <outlet property="loadingView" destination="I0E-iy-j8q" id="Sku-Lt-OkE"/>
                 <outlet property="tableView" destination="ldq-PZ-mLa" id="8oC-ob-Nfa"/>
                 <outlet property="view" destination="iN0-l3-epB" id="MtN-aU-Q8n"/>
             </connections>
@@ -20,26 +22,37 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="2kI-vG-knx">
-                    <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
-                    <color key="color" systemColor="systemBlueColor"/>
-                </activityIndicatorView>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ldq-PZ-mLa">
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I0E-iy-j8q">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <subviews>
+                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="2kI-vG-knx">
+                            <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                            <color key="color" systemColor="systemBlueColor"/>
+                        </activityIndicatorView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="2kI-vG-knx" firstAttribute="centerX" secondItem="I0E-iy-j8q" secondAttribute="centerX" id="Ajf-XP-KyV"/>
+                        <constraint firstItem="2kI-vG-knx" firstAttribute="centerY" secondItem="I0E-iy-j8q" secondAttribute="centerY" id="oeg-go-Lbw"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <color key="backgroundColor" systemColor="systemTealColor"/>
             <constraints>
-                <constraint firstItem="2kI-vG-knx" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="9Yc-ct-Otd"/>
+                <constraint firstAttribute="bottom" secondItem="I0E-iy-j8q" secondAttribute="bottom" id="47j-Bj-8go"/>
                 <constraint firstItem="ldq-PZ-mLa" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="LAN-vI-dea"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="ldq-PZ-mLa" secondAttribute="bottom" id="Omj-ti-WQy"/>
                 <constraint firstItem="ldq-PZ-mLa" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="dNZ-WM-BhX"/>
-                <constraint firstItem="2kI-vG-knx" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="sW9-nf-S9r"/>
+                <constraint firstItem="I0E-iy-j8q" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="gCO-PO-AHR"/>
+                <constraint firstItem="I0E-iy-j8q" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="uYj-eB-xSb"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="ldq-PZ-mLa" secondAttribute="trailing" id="vgv-vM-lgc"/>
+                <constraint firstItem="I0E-iy-j8q" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="wfI-5i-I7L"/>
             </constraints>
-            <point key="canvasLocation" x="-457" y="129"/>
+            <point key="canvasLocation" x="-457.97101449275368" y="128.57142857142856"/>
         </view>
     </objects>
     <resources>
@@ -48,9 +61,6 @@
         </systemColor>
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemTealColor">
-            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -17,13 +17,13 @@ class GetCharactersUseCasesTests: XCTestCase {
         let url = URL(string: "http://gateway.marvel.com/v1/public/characters?ts=1622767434656&apikey=e635872de001202b9ede79b944413bdd&hash=81fed372878a81470c0750f7d244dccc")!
         let alamofireAdapter = AlamofireAdapter()
         let sut = RemoteGetCharacters(url: url, httpGetRequest: alamofireAdapter)
-        sut.get { result in
+        sut.get(url: url) { result in
             switch result {
             case .failure:
                 XCTFail("Expect success got \(result) instead")
                 
             case .success(let data):
-                XCTAssertNil(data)
+                XCTAssertNotNil(data)
             }
             exp.fulfill()
         }

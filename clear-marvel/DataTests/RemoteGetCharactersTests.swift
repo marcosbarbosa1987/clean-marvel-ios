@@ -15,7 +15,7 @@ class RemoteGetCharactersTests: XCTestCase {
     func test_get_should_call_httpClient_with_correct_url() {
         let url = makeURL()
         let (sut, _) = makeSUT()
-        sut.get() { _ in }
+        sut.get(url: url) { _ in }
         XCTAssertEqual(sut.url, url)
     }
     
@@ -46,7 +46,7 @@ class RemoteGetCharactersTests: XCTestCase {
     func test_get_should_call_httpClient_not_complete_if_sut_is_null() {
         var (sut, httpRequestSpy): (RemoteGetCharacters?, HttpRequestSpy) = makeSUT()
         var result: Result<CharacterModel?, DomainError>?
-        sut?.get() { result = $0}
+        sut?.get(url: makeURL(), completion: { result = $0})
         sut = nil
         httpRequestSpy.completeWithError(.noConnectivity)
         XCTAssertNil(result)
@@ -72,7 +72,8 @@ extension RemoteGetCharactersTests {
     
     func expect(_ sut: RemoteGetCharacters, completeWith expectedResult: Result<CharacterModel, DomainError>, when action: () -> Void, file: StaticString = #filePath, line: UInt = #line) {
         let exp = expectation(description: "waiting")
-        sut.get() { receivedResult in
+        
+        sut.get(url: makeURL()) { receivedResult in
             switch (expectedResult, receivedResult) {
             
             case (.failure(let expectedError), .failure(let receivedError)):

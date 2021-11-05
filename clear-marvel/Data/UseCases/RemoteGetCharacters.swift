@@ -8,7 +8,9 @@
 import Foundation
 import Domain
 
-public class RemoteGetCharacters {
+public class RemoteGetCharacters: GetCharacters {
+    
+    
     
     public let url: URL
     public let httpGetRequest: HttpGetRequest
@@ -18,7 +20,7 @@ public class RemoteGetCharacters {
         self.httpGetRequest = httpGetRequest
     }
     
-    public func get(completion: @escaping(Result<CharacterModel?, DomainError>) -> Void) {
+    public func get(url: URL, completion: @escaping (Result<CharacterModel?, DomainError>) -> Void) {
         httpGetRequest.get(from: url) { [weak self] (result) in
             
             guard self != nil else { return }

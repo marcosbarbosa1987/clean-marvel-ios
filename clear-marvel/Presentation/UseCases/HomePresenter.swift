@@ -10,21 +10,21 @@ import Domain
 
 public class HomePresenter {
     
-    private let url: URL
     private let alertView: AlertView
     private let urlValidator: URLValidator
     private let getCharacters: GetCharacters
     private let loadingView: LoadingView
+    private let characterView: CharactersView
     
-    public init(url: URL, alertView: AlertView, urlValidator: URLValidator, getCharacters: GetCharacters, loadingView: LoadingView) {
-        self.url = url
+    public init(alertView: AlertView, urlValidator: URLValidator, getCharacters: GetCharacters, loadingView: LoadingView, characterView: CharactersView) {
         self.alertView = alertView
         self.urlValidator = urlValidator
         self.getCharacters = getCharacters
         self.loadingView = loadingView
+        self.characterView = characterView
     }
     
-    public func requestCharacters() {
+    public func requestCharacters(_ url: URL) {
         
         if urlValidator.isValid(url) {
             
@@ -35,8 +35,12 @@ public class HomePresenter {
                 guard let self = self else { return }
                 
                 switch result {
-                case .success:
-                    self.alertView.display(AlertViewModel(title: "Sucesso", message: "Recuperou os personagens da API."))
+                case .success(let data):
+                    if let response = data {
+                        self.characterView.displayCharacter(CharactersViewModel(characters: response))
+                    } else {
+                        self.alertView.display(AlertViewModel(title: "Sucesso", message: "Recuperou os personagens da API."))
+                    }
                     
                 case .failure:
                     self.alertView.display(AlertViewModel(title: "Falhou", message: "Algo inesperado aconteceu, tente novamente mais tarde."))

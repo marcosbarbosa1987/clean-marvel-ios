@@ -7,27 +7,25 @@
 
 import Foundation
 
-final public class UrlCreator {
+final public class UrlCreator: MD5Generator {
     
     private(set) var baseURL: String
     private(set) var privateKey: String
     private(set) var publicKey: String
     private(set) var endpoint: UrlCreatorEndpoint
     private(set) var timestamp: Int64
-    private(set) var md5Generator: MD5Generator
     
-    public init(model: UrlCreatorModel, md5Generator: MD5Generator) {
+    public init(model: UrlCreatorModel) {
         self.baseURL = model.baseURL
         self.privateKey = model.privateKey
         self.publicKey = model.publicKey
         self.endpoint = model.endpoint
         self.timestamp = model.timestamp
-        self.md5Generator = md5Generator
     }
     
     public func getUrl() -> URL? {
         
-        let hash = md5Generator.generateHash(from: timestamp, and: privateKey, and: publicKey)
+        let hash = generateHash(from: timestamp, and: privateKey, and: publicKey)
         
         if !hash.isEmpty {
             return createUrl(with: hash)
@@ -44,6 +42,10 @@ final public class UrlCreator {
         default:
             return nil
         }
+    }
+    
+    public func generateHash(from timestamp: Int64, and privateKey: String, and publicKey: String) -> String {
+        return MD5(from: "\(timestamp)\(privateKey)\(publicKey)")
     }
 }
 

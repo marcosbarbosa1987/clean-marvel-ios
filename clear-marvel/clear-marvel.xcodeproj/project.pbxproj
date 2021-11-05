@@ -57,6 +57,11 @@
 		CD354338273229C600641EC9 /* Validations.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD3542D027321FB100641EC9 /* Validations.framework */; platformFilter = ios; };
 		CD354339273229C600641EC9 /* Validations.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CD3542D027321FB100641EC9 /* Validations.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CD35433F27322A2500641EC9 /* HomeViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD35433E27322A2500641EC9 /* HomeViewFactory.swift */; };
+		CD3543412734022800641EC9 /* CharacterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3543402734022800641EC9 /* CharacterView.swift */; };
+		CD3543492734493C00641EC9 /* CharacterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3543472734493C00641EC9 /* CharacterTableViewCell.swift */; };
+		CD35434A2734493C00641EC9 /* CharacterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD3543482734493C00641EC9 /* CharacterTableViewCell.xib */; };
+		CD35434D2734513200641EC9 /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = CD35434C2734513200641EC9 /* Nuke */; };
+		CD35434F2734AFC500641EC9 /* CharacterViewSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD35434E2734AFC500641EC9 /* CharacterViewSpy.swift */; };
 		CD41331627319F1E0080D842 /* TestFactories.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBFF7CD272654510099D477 /* TestFactories.swift */; };
 		CD4133182731A0DF0080D842 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4133172731A0DF0080D842 /* LoadingView.swift */; };
 		CD41331B2731ADF10080D842 /* AlertViewSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD41331A2731ADF10080D842 /* AlertViewSpy.swift */; };
@@ -384,6 +389,10 @@
 		CD354317273228DA00641EC9 /* MainUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainUITests.swift; sourceTree = "<group>"; };
 		CD354319273228DA00641EC9 /* MainUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		CD35433E27322A2500641EC9 /* HomeViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewFactory.swift; sourceTree = "<group>"; };
+		CD3543402734022800641EC9 /* CharacterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterView.swift; sourceTree = "<group>"; };
+		CD3543472734493C00641EC9 /* CharacterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterTableViewCell.swift; sourceTree = "<group>"; };
+		CD3543482734493C00641EC9 /* CharacterTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterTableViewCell.xib; sourceTree = "<group>"; };
+		CD35434E2734AFC500641EC9 /* CharacterViewSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewSpy.swift; sourceTree = "<group>"; };
 		CD4133172731A0DF0080D842 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		CD41331A2731ADF10080D842 /* AlertViewSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewSpy.swift; sourceTree = "<group>"; };
 		CD41331D2731AE1B0080D842 /* LoadingViewSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewSpy.swift; sourceTree = "<group>"; };
@@ -504,6 +513,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD35434D2734513200641EC9 /* Nuke in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -727,11 +737,54 @@
 			path = Factories;
 			sourceTree = "<group>";
 		};
+		CD354342273448FD00641EC9 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				CD3543432734490500641EC9 /* Home */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		CD3543432734490500641EC9 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				CD3542C32732068300641EC9 /* HomeViewController.swift */,
+				CD3542C52732070D00641EC9 /* HomeViewController.xib */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		CD3543442734491500641EC9 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				CD3543452734491B00641EC9 /* Cells */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		CD3543452734491B00641EC9 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				CD3543462734492400641EC9 /* TableViewCell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		CD3543462734492400641EC9 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				CD3543472734493C00641EC9 /* CharacterTableViewCell.swift */,
+				CD3543482734493C00641EC9 /* CharacterTableViewCell.xib */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
 		CD4133192731ADDD0080D842 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				CD41331A2731ADF10080D842 /* AlertViewSpy.swift */,
 				CD41331D2731AE1B0080D842 /* LoadingViewSpy.swift */,
+				CD35434E2734AFC500641EC9 /* CharacterViewSpy.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -771,9 +824,9 @@
 		CD41332F2731C8A90080D842 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				CD3543442734491500641EC9 /* Components */,
+				CD354342273448FD00641EC9 /* Scenes */,
 				CD4133312731C8A90080D842 /* UI.docc */,
-				CD3542C32732068300641EC9 /* HomeViewController.swift */,
-				CD3542C52732070D00641EC9 /* HomeViewController.xib */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -920,6 +973,7 @@
 			children = (
 				CDC993EC2730D5B7003EE601 /* AlertView.swift */,
 				CD4133172731A0DF0080D842 /* LoadingView.swift */,
+				CD3543402734022800641EC9 /* CharacterView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1193,6 +1247,9 @@
 			dependencies = (
 			);
 			name = Domain;
+			packageProductDependencies = (
+				CD35434C2734513200641EC9 /* Nuke */,
+			);
 			productName = Domain;
 			productReference = CD65A399271B77CA00249530 /* Domain.framework */;
 			productType = "com.apple.product-type.framework";
@@ -1389,6 +1446,7 @@
 			mainGroup = CD65A36A271B6FDF00249530;
 			packageReferences = (
 				CD02703F2720FB0700F1AD64 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				CD35434B2734513200641EC9 /* XCRemoteSwiftPackageReference "Nuke" */,
 			);
 			productRefGroup = CD65A375271B6FDF00249530 /* Products */;
 			projectDirPath = "";
@@ -1471,6 +1529,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD3542C62732070D00641EC9 /* HomeViewController.xib in Resources */,
+				CD35434A2734493C00641EC9 /* CharacterTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1599,6 +1658,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD3543492734493C00641EC9 /* CharacterTableViewCell.swift in Sources */,
 				CD4133322731C8A90080D842 /* UI.docc in Sources */,
 				CD3542C42732068300641EC9 /* HomeViewController.swift in Sources */,
 			);
@@ -1676,6 +1736,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD3543412734022800641EC9 /* CharacterView.swift in Sources */,
 				CDED1FB3272F481800180B90 /* Presentation.docc in Sources */,
 				CDC993EA2730D56A003EE601 /* HomePresenter.swift in Sources */,
 				CDD5A7402730E7E100CC7E4A /* URLValidator.swift in Sources */,
@@ -1693,6 +1754,7 @@
 				CDED1FBE272F481800180B90 /* HomePresenterTests.swift in Sources */,
 				CD41331B2731ADF10080D842 /* AlertViewSpy.swift in Sources */,
 				CD4133212731AE9B0080D842 /* URLValidaatorSpy.swift in Sources */,
+				CD35434F2734AFC500641EC9 /* CharacterViewSpy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2997,6 +3059,14 @@
 				minimumVersion = 5.4.4;
 			};
 		};
+		CD35434B2734513200641EC9 /* XCRemoteSwiftPackageReference "Nuke" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kean/Nuke.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -3004,6 +3074,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = CD02703F2720FB0700F1AD64 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		CD35434C2734513200641EC9 /* Nuke */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CD35434B2734513200641EC9 /* XCRemoteSwiftPackageReference "Nuke" */;
+			productName = Nuke;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

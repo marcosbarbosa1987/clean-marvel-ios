@@ -18,14 +18,14 @@ class HomePresenterTests: XCTestCase {
         let alertViewSpy = AlertViewSpy()
         let urlValidator = URLValidatorSpy()
         urlValidator.simulate()
-        let sut = makeSUT(url: url, alertViewSpy: alertViewSpy, urlValidatorSpy: urlValidator)
+        let sut = makeSUT(alertViewSpy: alertViewSpy, urlValidatorSpy: urlValidator)
         
         alertViewSpy.observe { viewModel in
             XCTAssertEqual(viewModel, AlertViewModel(title: "Falhou", message: "URL fornecida é inválida."))
             exp.fulfill()
         }
         
-        sut.requestCharacters()
+        sut.requestCharacters(url)
         XCTAssertFalse(urlValidator.isValid)
         wait(for: [exp], timeout: 1)
     }
@@ -41,12 +41,12 @@ class HomePresenterTests: XCTestCase {
             exp.fulfill()
         }
         
-        sut.requestCharacters()
+        sut.requestCharacters(makeURL())
         getCharacterSpy.completeWithError(.unexpected)
         wait(for: [exp], timeout: 1)
     }
     
-    func test_get_should_call_getCharacters_method_with_success() {
+    func test_get_should_call_getCharacters_method_with_success_no_data() {
         let exp = expectation(description: "waiting")
         let alertViewSpy = AlertViewSpy()
         let getCharacterSpy = GetCharacterSpy()
@@ -57,7 +57,23 @@ class HomePresenterTests: XCTestCase {
             exp.fulfill()
         }
         
-        sut.requestCharacters()
+        sut.requestCharacters(makeURL())
+        getCharacterSpy.completeWithSuccess(nil)
+        wait(for: [exp], timeout: 1)
+    }
+    
+    func test_get_should_call_getCharacters_method_with_success_no() {
+        let exp = expectation(description: "waiting")
+        let getCharacterSpy = GetCharacterSpy()
+        let characterViewSpy = CharacterViewSpy()
+        let sut = makeSUT(getCharacterSpy: getCharacterSpy, characterViewSpy: characterViewSpy)
+        
+        characterViewSpy.observe { viewModel in
+            XCTAssertEqual(viewModel.characters, makeCharacterModel())
+            exp.fulfill()
+        }
+        
+        sut.requestCharacters(makeURL())
         getCharacterSpy.completeWithSuccess(makeCharacterModel())
         wait(for: [exp], timeout: 1)
     }
@@ -74,7 +90,7 @@ class HomePresenterTests: XCTestCase {
             exp.fulfill()
         }
         
-        sut.requestCharacters()
+        sut.requestCharacters(makeURL())
         wait(for: [exp], timeout: 1)
         
         let exp2 = expectation(description: "waiting")
@@ -89,14 +105,14 @@ class HomePresenterTests: XCTestCase {
 
 extension HomePresenterTests {
     
-    func makeSUT(url: URL = makeURL(),
-                 alertViewSpy: AlertViewSpy = AlertViewSpy(),
+    func makeSUT(alertViewSpy: AlertViewSpy = AlertViewSpy(),
                  urlValidatorSpy: URLValidatorSpy = URLValidatorSpy(),
                  getCharacterSpy: GetCharacterSpy = GetCharacterSpy(),
                  loadingViewSpy: LoadingViewSpy = LoadingViewSpy(),
+                 characterViewSpy: CharacterViewSpy = CharacterViewSpy(),
                  file: StaticString = #file, line: UInt = #line) -> HomePresenter {
         
-        let sut = HomePresenter(url: url, alertView: alertViewSpy, urlValidator: urlValidatorSpy, getCharacters: getCharacterSpy, loadingView: loadingViewSpy)
+        let sut = HomePresenter(alertView: alertViewSpy, urlValidator: urlValidatorSpy, getCharacters: getCharacterSpy, loadingView: loadingViewSpy, characterView: characterViewSpy)
         checkMemoryLeak(for: sut, file: file, line: line)
         return sut
     }
@@ -110,20 +126,22 @@ extension HomePresenterTests {
     class GetCharacterSpy: GetCharacters {
         
         var url: URL?
-        var completion: ((Result<CharacterModel?, Error>) -> Void)?
+        var completion: ((Result<CharacterModel?, DomainError>) -> Void)?
         
-        func get(url: URL, completion: @escaping (Result<CharacterModel?, Error>) -> Void) {
+        func get(url: URL, completion: @escaping (Result<CharacterModel?, DomainError>) -> Void) {
             self.url = url
             self.completion = completion
         }
-        
+
         func completeWithError(_ error: DomainError) {
             completion?(.failure(error))
         }
         
-        func completeWithSuccess(_ data: CharacterModel) {
+        func completeWithSuccess(_ data: CharacterModel?) {
             completion?(.success(data))
         }
     }
 }
+
+
 

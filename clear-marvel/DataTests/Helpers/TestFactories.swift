@@ -37,6 +37,6 @@ func makeHttpResponse(statusCode: Int = 200) -> HTTPURLResponse {
 }
 
 func makeCharacterModel() -> CharacterModel {
-    let data = CharacterModel(data: [])
+    let data = CharacterModel(data: CharacterData(offSet: 0, total: 0, results: nil))
     return data
 }

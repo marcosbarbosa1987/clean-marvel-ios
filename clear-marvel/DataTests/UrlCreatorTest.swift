@@ -93,8 +93,8 @@ class UrlCreatorTest: XCTestCase {
 // MARK: - Helpers
 
 extension UrlCreatorTest {
-    func makeSUT(model: UrlCreatorModel, md5GeneratorSpy: MD5Generator = MD5GeneratorSpy()) -> UrlCreator {
-        return UrlCreator(model: model, md5Generator: md5GeneratorSpy)
+    func makeSUT(model: UrlCreatorModel) -> UrlCreator {
+        return UrlCreator(model: model)
     }
     
     func makeModel(baseUrl: String = "http://any-url.com",
@@ -106,19 +106,19 @@ extension UrlCreatorTest {
     }
 }
 
-class MD5GeneratorSpy: MD5Generator {
-    
-    var timestamp: Int64?
-    var privateKey: String?
-    var publicKey: String?
-    
-    func generateHash(from timestamp: Int64, and privateKey: String, and publicKey: String) -> String {
-        
-        self.timestamp = timestamp
-        self.privateKey = privateKey
-        self.publicKey = publicKey
-        
-        return MD5(from: "\(timestamp)\(privateKey)\(publicKey)")
-    }
-}
+//class MD5GeneratorSpy: MD5Generator {
+//
+//    var timestamp: Int64?
+//    var privateKey: String?
+//    var publicKey: String?
+//
+//    func generateHash(from timestamp: Int64, and privateKey: String, and publicKey: String) -> String {
+//
+//        self.timestamp = timestamp
+//        self.privateKey = privateKey
+//        self.publicKey = publicKey
+//
+//        return MD5(from: "\(timestamp)\(privateKey)\(publicKey)")
+//    }
+//}
 

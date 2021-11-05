@@ -29,10 +29,20 @@ class HomeViewControllerTests: XCTestCase {
         XCTAssertEqual(sut.tableView.numberOfRows(inSection: 0), 0)
     }
     
-    func test_tableview_reload_with_one_row() {
+    func test_tableView_not_appear_select_row() {
         let sut = makeSUT()
-        XCTAssertEqual(sut.tableView.numberOfRows(inSection: 0), 1)
+        XCTAssertFalse(sut.tableView.allowsMultipleSelection)
     }
+    
+    func test_tableView_separatorStyle_is_none() {
+        let sut = makeSUT()
+        XCTAssertEqual(sut.tableView.separatorStyle, .none)
+    }
+    
+//    func test_tableview_reload_with_one_row() {
+//        let sut = makeSUT()
+//        XCTAssertEqual(sut.tableView.numberOfRows(inSection: 0), 1)
+//    }
 }
 
 extension HomeViewControllerTests {
@@ -42,10 +52,6 @@ extension HomeViewControllerTests {
         sut.loadViewIfNeeded()
         return sut
     }
-    
-    
-    
-    
 }
 
 

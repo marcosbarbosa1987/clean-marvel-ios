@@ -10,23 +10,29 @@ import UI
 import Presentation
 import Validations
 import Data
+import Infra
+import Domain
 
 class HomeViewFactory {
     
     static func makeController() -> HomeViewController {
         
-        let md5 = MD5Generator()
         let urlModel = UrlCreatorModel(baseURL: UrlConstants.baseURL.rawValue,
                                        endpoint: .characters,
                                        privateKey: UrlConstants.privateKey.rawValue,
                                        publicKey: UrlConstants.publicKey.rawValue,
                                        timestamp: Date().currentTimeMillis())
-        let url = UrlCreator(model: urlModel, md5Generator: md5)
+        guard let url = UrlCreator(model: urlModel).getUrl() else { return HomeViewController()}
         
         let controller = HomeViewController(nibName: "HomeViewController", bundle: Bundle(for: HomeViewController.self))
         let urlValidator = URLValidatorAdapter()
+        let alamofireAdapter = AlamofireAdapter()
+        let remoteGetCharacter = RemoteGetCharacters(url: url, httpGetRequest: alamofireAdapter)
         
-        let presenter = HomePresenter(url: url, alertView: controller, urlValidator: urlValidator, getCharacters: <#T##GetCharacters#>, loadingView: controller)
+        let presenter = HomePresenter(alertView: controller, urlValidator: urlValidator, getCharacters: remoteGetCharacter, loadingView: controller, characterView: controller)
+        
+        controller.url = url
+        controller.requestCharacters = presenter.requestCharacters
         
         return controller
     }
