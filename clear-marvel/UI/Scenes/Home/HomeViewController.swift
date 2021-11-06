@@ -9,15 +9,14 @@ import Foundation
 import UIKit
 import Presentation
 
-public class HomeViewController: UIViewController {
+public class HomeViewController: UIViewController, Xibed {
     
     // MARK: - Properties
     
     private let cellName = "CharacterTableViewCell"
     private let bundle = Bundle(for: CharacterTableViewCell.self)
     private var characters: CharactersViewModel?
-    public var url: URL?
-    public var requestCharacters: ((URL) -> Void)?
+    public var requestCharacters: (() -> Void)?
     
     // MARK: - Outlets
     
@@ -46,9 +45,7 @@ public class HomeViewController: UIViewController {
     public override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let url = self.url {
-            requestCharacters?(url)
-        }
+        requestCharacters?()
     }
 }
 

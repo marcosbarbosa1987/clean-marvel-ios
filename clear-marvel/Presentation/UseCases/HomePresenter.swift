@@ -15,8 +15,10 @@ public class HomePresenter {
     private let getCharacters: GetCharacters
     private weak var loadingView: LoadingView?
     private weak var characterView: CharactersView?
+    private let url: URL?
     
-    public init(alertView: AlertView, urlValidator: URLValidator, getCharacters: GetCharacters, loadingView: LoadingView, characterView: CharactersView) {
+    public init(url: URL, alertView: AlertView, urlValidator: URLValidator, getCharacters: GetCharacters, loadingView: LoadingView, characterView: CharactersView) {
+        self.url = url
         self.alertView = alertView
         self.urlValidator = urlValidator
         self.getCharacters = getCharacters
@@ -24,9 +26,9 @@ public class HomePresenter {
         self.characterView = characterView
     }
     
-    public func requestCharacters(_ url: URL) {
+    public func requestCharacters() {
         
-        if urlValidator.isValid(url) {
+        if let url = url, urlValidator.isValid(url) {
             
             self.loadingView?.display(LoadingViewModel(isLoading: true))
             

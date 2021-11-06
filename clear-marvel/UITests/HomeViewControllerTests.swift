@@ -52,7 +52,7 @@ class HomeViewControllerTests: XCTestCase {
 extension HomeViewControllerTests {
     
     func makeSUT() -> HomeViewController {
-        let sut = HomeViewController(nibName: "HomeViewController", bundle: Bundle(for: HomeViewController.self))
+        let sut = HomeViewController.instantiate()
         sut.loadViewIfNeeded()
         return sut
     }

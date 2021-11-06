@@ -62,6 +62,7 @@
 		CD35434A2734493C00641EC9 /* CharacterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD3543482734493C00641EC9 /* CharacterTableViewCell.xib */; };
 		CD35434D2734513200641EC9 /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = CD35434C2734513200641EC9 /* Nuke */; };
 		CD35434F2734AFC500641EC9 /* CharacterViewSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD35434E2734AFC500641EC9 /* CharacterViewSpy.swift */; };
+		CD3543532736ED0600641EC9 /* Xibed.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3543522736ED0600641EC9 /* Xibed.swift */; };
 		CD41331627319F1E0080D842 /* TestFactories.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBFF7CD272654510099D477 /* TestFactories.swift */; };
 		CD4133182731A0DF0080D842 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4133172731A0DF0080D842 /* LoadingView.swift */; };
 		CD41331B2731ADF10080D842 /* AlertViewSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD41331A2731ADF10080D842 /* AlertViewSpy.swift */; };
@@ -393,6 +394,7 @@
 		CD3543472734493C00641EC9 /* CharacterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterTableViewCell.swift; sourceTree = "<group>"; };
 		CD3543482734493C00641EC9 /* CharacterTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterTableViewCell.xib; sourceTree = "<group>"; };
 		CD35434E2734AFC500641EC9 /* CharacterViewSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewSpy.swift; sourceTree = "<group>"; };
+		CD3543522736ED0600641EC9 /* Xibed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Xibed.swift; sourceTree = "<group>"; };
 		CD4133172731A0DF0080D842 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		CD41331A2731ADF10080D842 /* AlertViewSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewSpy.swift; sourceTree = "<group>"; };
 		CD41331D2731AE1B0080D842 /* LoadingViewSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewSpy.swift; sourceTree = "<group>"; };
@@ -740,7 +742,6 @@
 		CD354342273448FD00641EC9 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				CD3543502735A53600641EC9 /* New Group */,
 				CD3543432734490500641EC9 /* Home */,
 			);
 			path = Scenes;
@@ -780,11 +781,12 @@
 			path = TableViewCell;
 			sourceTree = "<group>";
 		};
-		CD3543502735A53600641EC9 /* New Group */ = {
+		CD3543512736ECEF00641EC9 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				CD3543522736ED0600641EC9 /* Xibed.swift */,
 			);
-			path = "New Group";
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		CD4133192731ADDD0080D842 /* Views */ = {
@@ -832,6 +834,7 @@
 		CD41332F2731C8A90080D842 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				CD3543512736ECEF00641EC9 /* Helpers */,
 				CD3543442734491500641EC9 /* Components */,
 				CD354342273448FD00641EC9 /* Scenes */,
 				CD4133312731C8A90080D842 /* UI.docc */,
@@ -1668,6 +1671,7 @@
 			files = (
 				CD3543492734493C00641EC9 /* CharacterTableViewCell.swift in Sources */,
 				CD4133322731C8A90080D842 /* UI.docc in Sources */,
+				CD3543532736ED0600641EC9 /* Xibed.swift in Sources */,
 				CD3542C42732068300641EC9 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
