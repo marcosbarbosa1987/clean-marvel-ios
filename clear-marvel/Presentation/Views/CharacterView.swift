@@ -8,7 +8,7 @@
 import Foundation
 import Domain
 
-public protocol CharactersView: AnyObject {
+public protocol CharactersView {
     func displayCharacter(_ viewModel: CharactersViewModel)
 }
 

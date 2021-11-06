@@ -56,18 +56,28 @@
 		CD354335273229C600641EC9 /* UI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CD41332E2731C8A90080D842 /* UI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CD354338273229C600641EC9 /* Validations.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD3542D027321FB100641EC9 /* Validations.framework */; platformFilter = ios; };
 		CD354339273229C600641EC9 /* Validations.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CD3542D027321FB100641EC9 /* Validations.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		CD35433F27322A2500641EC9 /* HomeViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD35433E27322A2500641EC9 /* HomeViewFactory.swift */; };
+		CD35433F27322A2500641EC9 /* ControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD35433E27322A2500641EC9 /* ControllerFactory.swift */; };
 		CD3543412734022800641EC9 /* CharacterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3543402734022800641EC9 /* CharacterView.swift */; };
 		CD3543492734493C00641EC9 /* CharacterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3543472734493C00641EC9 /* CharacterTableViewCell.swift */; };
 		CD35434A2734493C00641EC9 /* CharacterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD3543482734493C00641EC9 /* CharacterTableViewCell.xib */; };
 		CD35434D2734513200641EC9 /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = CD35434C2734513200641EC9 /* Nuke */; };
 		CD35434F2734AFC500641EC9 /* CharacterViewSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD35434E2734AFC500641EC9 /* CharacterViewSpy.swift */; };
 		CD3543532736ED0600641EC9 /* Xibed.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3543522736ED0600641EC9 /* Xibed.swift */; };
+		CD3543552736FAD700641EC9 /* UseCaseFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3543542736FAD700641EC9 /* UseCaseFactory.swift */; };
+		CD3543582736FB5600641EC9 /* HomeComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3543572736FB5600641EC9 /* HomeComposer.swift */; };
+		CD35435A2737029C00641EC9 /* HomeIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3543592737029B00641EC9 /* HomeIntegrationTests.swift */; };
+		CD35435D2737037800641EC9 /* GetCharacterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD35435C2737037800641EC9 /* GetCharacterSpy.swift */; };
+		CD35435E273703C900641EC9 /* TestFactories.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBFF7CD272654510099D477 /* TestFactories.swift */; };
+		CD35435F273703D000641EC9 /* GetCharacterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD35435C2737037800641EC9 /* GetCharacterSpy.swift */; };
+		CD3543612737041700641EC9 /* TestExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3543602737041700641EC9 /* TestExtensions.swift */; };
+		CD3543642737045B00641EC9 /* TestExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3543602737041700641EC9 /* TestExtensions.swift */; };
+		CD3543652737048800641EC9 /* TestExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3543602737041700641EC9 /* TestExtensions.swift */; };
+		CD3543682737070F00641EC9 /* WeakVarProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3543672737070F00641EC9 /* WeakVarProxy.swift */; };
 		CD41331627319F1E0080D842 /* TestFactories.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBFF7CD272654510099D477 /* TestFactories.swift */; };
 		CD4133182731A0DF0080D842 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4133172731A0DF0080D842 /* LoadingView.swift */; };
 		CD41331B2731ADF10080D842 /* AlertViewSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD41331A2731ADF10080D842 /* AlertViewSpy.swift */; };
 		CD41331E2731AE1B0080D842 /* LoadingViewSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD41331D2731AE1B0080D842 /* LoadingViewSpy.swift */; };
-		CD4133212731AE9B0080D842 /* URLValidaatorSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4133202731AE9B0080D842 /* URLValidaatorSpy.swift */; };
+		CD4133212731AE9B0080D842 /* URLValidatorSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4133202731AE9B0080D842 /* URLValidatorSpy.swift */; };
 		CD4133252731C72C0080D842 /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD65A3BF271B85D900249530 /* Data.framework */; };
 		CD4133262731C72C0080D842 /* Data.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CD65A3BF271B85D900249530 /* Data.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CD4133322731C8A90080D842 /* UI.docc in Sources */ = {isa = PBXBuildFile; fileRef = CD4133312731C8A90080D842 /* UI.docc */; };
@@ -389,16 +399,22 @@
 		CD354313273228DA00641EC9 /* MainUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MainUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD354317273228DA00641EC9 /* MainUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainUITests.swift; sourceTree = "<group>"; };
 		CD354319273228DA00641EC9 /* MainUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		CD35433E27322A2500641EC9 /* HomeViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewFactory.swift; sourceTree = "<group>"; };
+		CD35433E27322A2500641EC9 /* ControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerFactory.swift; sourceTree = "<group>"; };
 		CD3543402734022800641EC9 /* CharacterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterView.swift; sourceTree = "<group>"; };
 		CD3543472734493C00641EC9 /* CharacterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterTableViewCell.swift; sourceTree = "<group>"; };
 		CD3543482734493C00641EC9 /* CharacterTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterTableViewCell.xib; sourceTree = "<group>"; };
 		CD35434E2734AFC500641EC9 /* CharacterViewSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewSpy.swift; sourceTree = "<group>"; };
 		CD3543522736ED0600641EC9 /* Xibed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Xibed.swift; sourceTree = "<group>"; };
+		CD3543542736FAD700641EC9 /* UseCaseFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseFactory.swift; sourceTree = "<group>"; };
+		CD3543572736FB5600641EC9 /* HomeComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeComposer.swift; sourceTree = "<group>"; };
+		CD3543592737029B00641EC9 /* HomeIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeIntegrationTests.swift; sourceTree = "<group>"; };
+		CD35435C2737037800641EC9 /* GetCharacterSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCharacterSpy.swift; sourceTree = "<group>"; };
+		CD3543602737041700641EC9 /* TestExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestExtensions.swift; sourceTree = "<group>"; };
+		CD3543672737070F00641EC9 /* WeakVarProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakVarProxy.swift; sourceTree = "<group>"; };
 		CD4133172731A0DF0080D842 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		CD41331A2731ADF10080D842 /* AlertViewSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewSpy.swift; sourceTree = "<group>"; };
 		CD41331D2731AE1B0080D842 /* LoadingViewSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewSpy.swift; sourceTree = "<group>"; };
-		CD4133202731AE9B0080D842 /* URLValidaatorSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLValidaatorSpy.swift; sourceTree = "<group>"; };
+		CD4133202731AE9B0080D842 /* URLValidatorSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLValidatorSpy.swift; sourceTree = "<group>"; };
 		CD41332E2731C8A90080D842 /* UI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD4133312731C8A90080D842 /* UI.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = UI.docc; sourceTree = "<group>"; };
 		CD4133372731C8A90080D842 /* UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -704,6 +720,8 @@
 		CD3542F5273228D800641EC9 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				CD354366273706BF00641EC9 /* Proxies */,
+				CD3543562736FB4800641EC9 /* Composers */,
 				CD35433D27322A1800641EC9 /* Factories */,
 				CD3542F6273228D800641EC9 /* AppDelegate.swift */,
 				CD3542F8273228D800641EC9 /* SceneDelegate.swift */,
@@ -718,6 +736,7 @@
 			isa = PBXGroup;
 			children = (
 				CD35430D273228DA00641EC9 /* MainTests.swift */,
+				CD3543592737029B00641EC9 /* HomeIntegrationTests.swift */,
 			);
 			path = MainTests;
 			sourceTree = "<group>";
@@ -734,7 +753,8 @@
 		CD35433D27322A1800641EC9 /* Factories */ = {
 			isa = PBXGroup;
 			children = (
-				CD35433E27322A2500641EC9 /* HomeViewFactory.swift */,
+				CD35433E27322A2500641EC9 /* ControllerFactory.swift */,
+				CD3543542736FAD700641EC9 /* UseCaseFactory.swift */,
 			);
 			path = Factories;
 			sourceTree = "<group>";
@@ -789,6 +809,30 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		CD3543562736FB4800641EC9 /* Composers */ = {
+			isa = PBXGroup;
+			children = (
+				CD3543572736FB5600641EC9 /* HomeComposer.swift */,
+			);
+			path = Composers;
+			sourceTree = "<group>";
+		};
+		CD35435B2737036700641EC9 /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				CDED1FBD272F481800180B90 /* HomePresenterTests.swift */,
+			);
+			path = Presenters;
+			sourceTree = "<group>";
+		};
+		CD354366273706BF00641EC9 /* Proxies */ = {
+			isa = PBXGroup;
+			children = (
+				CD3543672737070F00641EC9 /* WeakVarProxy.swift */,
+			);
+			path = Proxies;
+			sourceTree = "<group>";
+		};
 		CD4133192731ADDD0080D842 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -802,7 +846,7 @@
 		CD41331F2731AE7A0080D842 /* Validators */ = {
 			isa = PBXGroup;
 			children = (
-				CD4133202731AE9B0080D842 /* URLValidaatorSpy.swift */,
+				CD4133202731AE9B0080D842 /* URLValidatorSpy.swift */,
 			);
 			path = Validators;
 			sourceTree = "<group>";
@@ -818,7 +862,7 @@
 		CD4133232731AED60080D842 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
-				CDED1FBD272F481800180B90 /* HomePresenterTests.swift */,
+				CD35435C2737037800641EC9 /* GetCharacterSpy.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -975,6 +1019,7 @@
 			isa = PBXGroup;
 			children = (
 				CDBFF7CD272654510099D477 /* TestFactories.swift */,
+				CD3543602737041700641EC9 /* TestExtensions.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -1011,6 +1056,7 @@
 		CDED1FBC272F481800180B90 /* PresentationTests */ = {
 			isa = PBXGroup;
 			children = (
+				CD35435B2737036700641EC9 /* Presenters */,
 				CD4133232731AED60080D842 /* UseCases */,
 				CD41331F2731AE7A0080D842 /* Validators */,
 				CD4133192731ADDD0080D842 /* Views */,
@@ -1642,8 +1688,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD3543552736FAD700641EC9 /* UseCaseFactory.swift in Sources */,
 				CD3542F7273228D800641EC9 /* AppDelegate.swift in Sources */,
-				CD35433F27322A2500641EC9 /* HomeViewFactory.swift in Sources */,
+				CD35433F27322A2500641EC9 /* ControllerFactory.swift in Sources */,
+				CD3543582736FB5600641EC9 /* HomeComposer.swift in Sources */,
+				CD3543682737070F00641EC9 /* WeakVarProxy.swift in Sources */,
 				CD3542F9273228D800641EC9 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1652,7 +1701,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD35435E273703C900641EC9 /* TestFactories.swift in Sources */,
+				CD35435F273703D000641EC9 /* GetCharacterSpy.swift in Sources */,
 				CD35430E273228DA00641EC9 /* MainTests.swift in Sources */,
+				CD3543652737048800641EC9 /* TestExtensions.swift in Sources */,
+				CD35435A2737029C00641EC9 /* HomeIntegrationTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1733,6 +1786,7 @@
 				CD65A3EB271B86C000249530 /* RemoteGetCharactersTests.swift in Sources */,
 				CD026FC1271CF99200F1AD64 /* Date+Extensions.swift in Sources */,
 				CD026FD5271CFA1A00F1AD64 /* RemoteGetCharacters.swift in Sources */,
+				CD3543612737041700641EC9 /* TestExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1765,8 +1819,10 @@
 				CD41331627319F1E0080D842 /* TestFactories.swift in Sources */,
 				CDED1FBE272F481800180B90 /* HomePresenterTests.swift in Sources */,
 				CD41331B2731ADF10080D842 /* AlertViewSpy.swift in Sources */,
-				CD4133212731AE9B0080D842 /* URLValidaatorSpy.swift in Sources */,
+				CD4133212731AE9B0080D842 /* URLValidatorSpy.swift in Sources */,
+				CD35435D2737037800641EC9 /* GetCharacterSpy.swift in Sources */,
 				CD35434F2734AFC500641EC9 /* CharacterViewSpy.swift in Sources */,
+				CD3543642737045B00641EC9 /* TestExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

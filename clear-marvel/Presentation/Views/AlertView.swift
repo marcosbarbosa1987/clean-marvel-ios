@@ -7,7 +7,7 @@
 
 import Foundation
 
-public protocol AlertView: AnyObject {
+public protocol AlertView {
     func display(_ viewModel: AlertViewModel)
 }
 

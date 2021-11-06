@@ -64,12 +64,6 @@ extension RemoteGetCharactersTests {
         return (sut, httpRequestSpy)
     }
     
-    func checkMemoryLeak(for instance: AnyObject, file: StaticString = #file, line: UInt = #line) {
-        addTeardownBlock { [weak instance] in
-            XCTAssertNil(instance, file: file, line: line)
-        }
-    }
-    
     func expect(_ sut: RemoteGetCharacters, completeWith expectedResult: Result<CharacterModel, DomainError>, when action: () -> Void, file: StaticString = #filePath, line: UInt = #line) {
         let exp = expectation(description: "waiting")
         

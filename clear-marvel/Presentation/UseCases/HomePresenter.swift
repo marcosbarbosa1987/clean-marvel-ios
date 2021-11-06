@@ -10,11 +10,11 @@ import Domain
 
 public class HomePresenter {
     
-    private weak var alertView: AlertView?
+    private var alertView: AlertView?
     private let urlValidator: URLValidator
     private let getCharacters: GetCharacters
-    private weak var loadingView: LoadingView?
-    private weak var characterView: CharactersView?
+    private var loadingView: LoadingView?
+    private var characterView: CharactersView?
     private let url: URL?
     
     public init(url: URL, alertView: AlertView, urlValidator: URLValidator, getCharacters: GetCharacters, loadingView: LoadingView, characterView: CharactersView) {

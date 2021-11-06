@@ -1,32 +1,15 @@
 //
-//  HomeViewFactory.swift
+//  UseCaseFactory.swift
 //  Main
 //
-//  Created by Marcos Barbosa on 02/11/21.
+//  Created by Marcos Barbosa on 06/11/21.
 //
 
 import Foundation
-import UI
-import Presentation
-import Validations
 import Data
 import Infra
-import Domain
 
-class HomeViewFactory {
-    
-    static func makeController(url: URL, getCharacter: GetCharacters) -> HomeViewController {
-        
-        let controller = HomeViewController.instantiate()
-        let urlValidator = URLValidatorAdapter()
-        let presenter = HomePresenter(url: url, alertView: controller, urlValidator: urlValidator, getCharacters: getCharacter, loadingView: controller, characterView: controller)
-        controller.requestCharacters = presenter.requestCharacters
-        
-        return controller
-    }
-}
-
-class UseCaseFactory {
+final class UseCaseFactory {
     
     static func getCharacterURL(endpoint: UrlCreatorEndpoint) -> URL {
         let urlModel = UrlCreatorModel(baseURL: UrlConstants.baseURL.rawValue,
