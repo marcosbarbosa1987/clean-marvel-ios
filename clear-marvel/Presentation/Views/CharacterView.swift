@@ -8,6 +8,10 @@
 import Foundation
 import Domain
 
+public protocol CharactersView: AnyObject {
+    func displayCharacter(_ viewModel: CharactersViewModel)
+}
+
 public struct CharactersViewModel {
     public var characters: CharacterModel
     
@@ -16,6 +20,4 @@ public struct CharactersViewModel {
     }
 }
 
-public protocol CharactersView {
-    func displayCharacter(_ viewModel: CharactersViewModel)
-}
+

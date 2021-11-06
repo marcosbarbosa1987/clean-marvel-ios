@@ -10,11 +10,11 @@ import Domain
 
 public class HomePresenter {
     
-    private let alertView: AlertView
+    private weak var alertView: AlertView?
     private let urlValidator: URLValidator
     private let getCharacters: GetCharacters
-    private let loadingView: LoadingView
-    private let characterView: CharactersView
+    private weak var loadingView: LoadingView?
+    private weak var characterView: CharactersView?
     
     public init(alertView: AlertView, urlValidator: URLValidator, getCharacters: GetCharacters, loadingView: LoadingView, characterView: CharactersView) {
         self.alertView = alertView
@@ -28,7 +28,7 @@ public class HomePresenter {
         
         if urlValidator.isValid(url) {
             
-            self.loadingView.display(LoadingViewModel(isLoading: true))
+            self.loadingView?.display(LoadingViewModel(isLoading: true))
             
             getCharacters.get(url: url) { [weak self] result in
                 
@@ -37,20 +37,20 @@ public class HomePresenter {
                 switch result {
                 case .success(let data):
                     if let response = data {
-                        self.characterView.displayCharacter(CharactersViewModel(characters: response))
+                        self.characterView?.displayCharacter(CharactersViewModel(characters: response))
                     } else {
-                        self.alertView.display(AlertViewModel(title: "Sucesso", message: "Recuperou os personagens da API."))
+                        self.alertView?.display(AlertViewModel(title: "Sucesso", message: "Recuperou os personagens da API."))
                     }
                     
                 case .failure:
-                    self.alertView.display(AlertViewModel(title: "Falhou", message: "Algo inesperado aconteceu, tente novamente mais tarde."))
+                    self.alertView?.display(AlertViewModel(title: "Falhou", message: "Algo inesperado aconteceu, tente novamente mais tarde."))
                 }
-                self.loadingView.display(LoadingViewModel(isLoading: false))
+                self.loadingView?.display(LoadingViewModel(isLoading: false))
             }
             
         } else {
             let model = AlertViewModel(title: "Falhou", message: "URL fornecida é inválida.")
-            alertView.display(model)
+            alertView?.display(model)
         }
     }
 }

@@ -24,6 +24,10 @@ class HomeViewControllerTests: XCTestCase {
         XCTAssertNotNil(makeSUT() as AlertView)
     }
     
+    func test_sut_implements_characterView() {
+        XCTAssertNotNil(makeSUT() as CharactersView)
+    }
+    
     func test_tableView_starts_with_zero_row() {
         let sut = makeSUT()
         XCTAssertEqual(sut.tableView.numberOfRows(inSection: 0), 0)

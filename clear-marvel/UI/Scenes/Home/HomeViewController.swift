@@ -67,7 +67,6 @@ extension HomeViewController: UITableViewDataSource {
             cell.setData(data)
         }
         
-        
         return cell
     }
 }

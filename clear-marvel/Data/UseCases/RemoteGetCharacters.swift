@@ -10,8 +10,6 @@ import Domain
 
 public class RemoteGetCharacters: GetCharacters {
     
-    
-    
     public let url: URL
     public let httpGetRequest: HttpGetRequest
     

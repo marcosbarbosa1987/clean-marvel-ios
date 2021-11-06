@@ -30,7 +30,6 @@ public final class AlamofireAdapter: HttpGetRequest {
                 completion(.failure(.noConnectivity))
                 
                 print(statusCode)
-                print(url)
                 
             case .success(let data):
                 

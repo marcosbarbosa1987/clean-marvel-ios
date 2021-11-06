@@ -740,6 +740,7 @@
 		CD354342273448FD00641EC9 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				CD3543502735A53600641EC9 /* New Group */,
 				CD3543432734490500641EC9 /* Home */,
 			);
 			path = Scenes;
@@ -777,6 +778,13 @@
 				CD3543482734493C00641EC9 /* CharacterTableViewCell.xib */,
 			);
 			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		CD3543502735A53600641EC9 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		CD4133192731ADDD0080D842 /* Views */ = {

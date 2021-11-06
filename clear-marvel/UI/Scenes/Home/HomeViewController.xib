@@ -42,6 +42,7 @@
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="I0E-iy-j8q" secondAttribute="bottom" id="47j-Bj-8go"/>
                 <constraint firstItem="ldq-PZ-mLa" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="LAN-vI-dea"/>
