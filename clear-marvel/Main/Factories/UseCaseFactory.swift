@@ -8,8 +8,11 @@
 import Foundation
 import Data
 import Infra
+import Domain
 
 final class UseCaseFactory {
+    
+    private static let httpClient = AlamofireAdapter()
     
     static func getCharacterURL(endpoint: UrlCreatorEndpoint) -> URL {
         let urlModel = UrlCreatorModel(baseURL: UrlConstants.baseURL.rawValue,
@@ -20,8 +23,8 @@ final class UseCaseFactory {
         return UrlCreator(model: urlModel).getUrl() ?? URL(string: "")!
     }
     
-    static func makeRemoteGetCharacter() -> RemoteGetCharacters {
-        let alamofireAdapter = AlamofireAdapter()
-        return RemoteGetCharacters(url: UseCaseFactory.getCharacterURL(endpoint: .characters), httpGetRequest: alamofireAdapter)
+    static func makeRemoteGetCharacter() -> GetCharacters {
+        let remoteGetCharacter = RemoteGetCharacters(url: getCharacterURL(endpoint: .characters), httpGetRequest: httpClient)
+        return MainQueueDispatchDecorator(remoteGetCharacter)
     }
 }

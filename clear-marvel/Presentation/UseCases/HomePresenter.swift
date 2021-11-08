@@ -35,6 +35,7 @@ public class HomePresenter {
             getCharacters.get(url: url) { [weak self] result in
                 
                 guard let self = self else { return }
+                self.loadingView?.display(LoadingViewModel(isLoading: false))
                 
                 switch result {
                 case .success(let data):
@@ -47,9 +48,7 @@ public class HomePresenter {
                 case .failure:
                     self.alertView?.display(AlertViewModel(title: "Falhou", message: "Algo inesperado aconteceu, tente novamente mais tarde."))
                 }
-                self.loadingView?.display(LoadingViewModel(isLoading: false))
             }
-            
         } else {
             let model = AlertViewModel(title: "Falhou", message: "URL fornecida é inválida.")
             alertView?.display(model)

@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import Presentation
+import Domain
 
 public class HomeViewController: UIViewController, Xibed {
     
@@ -15,8 +16,10 @@ public class HomeViewController: UIViewController, Xibed {
     
     private let cellName = "CharacterTableViewCell"
     private let bundle = Bundle(for: CharacterTableViewCell.self)
-    private var characters: CharactersViewModel?
+    public var characters: CharactersViewModel?
+    public var itemSelected: CharacterResult?
     public var requestCharacters: (() -> Void)?
+    public var selectedItem: ((CharacterResult) -> Void)?
     
     // MARK: - Outlets
     
@@ -28,6 +31,7 @@ public class HomeViewController: UIViewController, Xibed {
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     @IBOutlet weak var tableView: UITableView! {
         didSet {
+            tableView.delegate = self
             tableView.dataSource = self
             tableView.separatorStyle = .none
             tableView.register(UINib(nibName: cellName, bundle: bundle), forCellReuseIdentifier: cellName)
@@ -45,6 +49,7 @@ public class HomeViewController: UIViewController, Xibed {
     public override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.title = "Personagens Marvel"
         requestCharacters?()
     }
 }
@@ -65,6 +70,15 @@ extension HomeViewController: UITableViewDataSource {
         }
         
         return cell
+    }
+}
+
+extension HomeViewController: UITableViewDelegate {
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let item = characters?.characters.data?.results?[indexPath.row] {
+            itemSelected = item
+            selectedItem?(item)
+        }
     }
 }
 

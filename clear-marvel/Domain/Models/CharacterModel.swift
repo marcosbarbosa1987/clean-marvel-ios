@@ -31,6 +31,12 @@ public struct CharacterResult: Model {
     public var id: Int?
     public var name: String?
     public var thumbnail: CharacterThumb?
+    
+    public init(id: Int?, name: String?, thumbnail: CharacterThumb?) {
+        self.id = id
+        self.name = name
+        self.thumbnail = thumbnail
+    }
 }
 
 public struct CharacterThumb: Model {
@@ -40,5 +46,10 @@ public struct CharacterThumb: Model {
     enum CodingKeys: String, CodingKey {
         case path = "path"
         case extensionType = "extension"
+    }
+    
+    public init(path: String, extensionType: String?) {
+        self.path = path
+        self.extensionType = extensionType
     }
 }

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import UI
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -18,8 +19,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
-//        let navitagionController = UINavigationController(rootViewController: HomeViewFactory.makeController())
-        window?.rootViewController = HomeComposer.composeControllerWith(url: UseCaseFactory.getCharacterURL(endpoint: .characters), getCharacter: UseCaseFactory.makeRemoteGetCharacter())
+        let nav = NavigationController()
+        nav.setRootViewController(HomeComposer.composeControllerWith(url: UseCaseFactory.getCharacterURL(endpoint: .characters), getCharacter: UseCaseFactory.makeRemoteGetCharacter()))
+        window?.rootViewController = nav
         window?.makeKeyAndVisible()
     }
 

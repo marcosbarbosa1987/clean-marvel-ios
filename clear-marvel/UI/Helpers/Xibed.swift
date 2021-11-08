@@ -17,7 +17,7 @@ extension Xibed where Self: UIViewController {
     public static func instantiate() -> Self {
         let vcName = String(describing: self)
         let bundle = Bundle(for: Self.self)
-        return Self(nibName: vcName, bundle: bundle) as! Self
+        return Self(nibName: vcName, bundle: bundle)
     }
     
 }
