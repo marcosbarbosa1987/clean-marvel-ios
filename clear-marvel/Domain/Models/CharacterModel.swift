@@ -30,9 +30,10 @@ public struct CharacterData: Model {
 public struct CharacterResult: Model {
     public var id: Int?
     public var name: String?
+    public var description: String?
     public var thumbnail: CharacterThumb?
     
-    public init(id: Int?, name: String?, thumbnail: CharacterThumb?) {
+    public init(id: Int?, name: String?, description: String?, thumbnail: CharacterThumb?) {
         self.id = id
         self.name = name
         self.thumbnail = thumbnail

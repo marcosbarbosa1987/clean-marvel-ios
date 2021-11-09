@@ -77,6 +77,8 @@
 		CD3543702738A16400641EC9 /* DetailCharacterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD35436E2738A16400641EC9 /* DetailCharacterViewController.xib */; };
 		CD3543762738A51A00641EC9 /* DetailCharacterViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3543752738A51A00641EC9 /* DetailCharacterViewControllerTests.swift */; };
 		CD3543792738CA5600641EC9 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3543782738CA5600641EC9 /* NavigationController.swift */; };
+		CD35437C273A037B00641EC9 /* HomeRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD35437B273A037B00641EC9 /* HomeRouterTests.swift */; };
+		CD35437E273A0AD100641EC9 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD35437D273A0AD100641EC9 /* HomeRouter.swift */; };
 		CD41331627319F1E0080D842 /* TestFactories.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBFF7CD272654510099D477 /* TestFactories.swift */; };
 		CD4133182731A0DF0080D842 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4133172731A0DF0080D842 /* LoadingView.swift */; };
 		CD41331B2731ADF10080D842 /* AlertViewSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD41331A2731ADF10080D842 /* AlertViewSpy.swift */; };
@@ -419,6 +421,8 @@
 		CD35436E2738A16400641EC9 /* DetailCharacterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailCharacterViewController.xib; sourceTree = "<group>"; };
 		CD3543752738A51A00641EC9 /* DetailCharacterViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCharacterViewControllerTests.swift; sourceTree = "<group>"; };
 		CD3543782738CA5600641EC9 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		CD35437B273A037B00641EC9 /* HomeRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouterTests.swift; sourceTree = "<group>"; };
+		CD35437D273A0AD100641EC9 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
 		CD4133172731A0DF0080D842 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		CD41331A2731ADF10080D842 /* AlertViewSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewSpy.swift; sourceTree = "<group>"; };
 		CD41331D2731AE1B0080D842 /* LoadingViewSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewSpy.swift; sourceTree = "<group>"; };
@@ -781,6 +785,7 @@
 			children = (
 				CD3542C32732068300641EC9 /* HomeViewController.swift */,
 				CD3542C52732070D00641EC9 /* HomeViewController.xib */,
+				CD35437D273A0AD100641EC9 /* HomeRouter.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -881,6 +886,7 @@
 			isa = PBXGroup;
 			children = (
 				CD41333C2731C8A90080D842 /* HomeViewControllerTests.swift */,
+				CD35437B273A037B00641EC9 /* HomeRouterTests.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -1793,6 +1799,7 @@
 			files = (
 				CD3543492734493C00641EC9 /* CharacterTableViewCell.swift in Sources */,
 				CD3543792738CA5600641EC9 /* NavigationController.swift in Sources */,
+				CD35437E273A0AD100641EC9 /* HomeRouter.swift in Sources */,
 				CD35436F2738A16400641EC9 /* DetailCharacterViewController.swift in Sources */,
 				CD4133322731C8A90080D842 /* UI.docc in Sources */,
 				CD3543532736ED0600641EC9 /* Xibed.swift in Sources */,
@@ -1805,6 +1812,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD41333D2731C8A90080D842 /* HomeViewControllerTests.swift in Sources */,
+				CD35437C273A037B00641EC9 /* HomeRouterTests.swift in Sources */,
 				CD3543762738A51A00641EC9 /* DetailCharacterViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

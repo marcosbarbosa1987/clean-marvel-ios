@@ -12,9 +12,12 @@ import Data
 
 class CharacterTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var characterImage: UIImageView!
+    @IBOutlet weak var characterImage: UIImageView! {
+        didSet {
+            characterImage.layer.cornerRadius = 12
+        }
+    }
     @IBOutlet weak var charecterName: UILabel!
-    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -29,8 +32,16 @@ class CharacterTableViewCell: UITableViewCell {
     
     
     func setData(_ data: CharacterResult) {
-        charecterName.text = data.name ?? ""
-        if let stringUrl = data.thumbnail?.path, let type = data.thumbnail?.extensionType {
+        setName(name: data.name)
+        setImage(data: data.thumbnail)
+    }
+    
+    func setName(name: String?) {
+        charecterName.text = name ?? ""
+    }
+    
+    func setImage(data: CharacterThumb?) {
+        if let stringUrl = data?.path, let type = data?.extensionType {
             
             let url = URL(string: "\(stringUrl)/\(Standard.large.rawValue).\(type)")!
             Nuke.loadImage(with: url, into: characterImage)

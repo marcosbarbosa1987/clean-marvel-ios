@@ -19,7 +19,7 @@ public class HomeViewController: UIViewController, Xibed {
     public var characters: CharactersViewModel?
     public var itemSelected: CharacterResult?
     public var requestCharacters: (() -> Void)?
-    public var selectedItem: ((CharacterResult) -> Void)?
+    public var selectedItem: ((CharacterResult?) -> Void)?
     
     // MARK: - Outlets
     

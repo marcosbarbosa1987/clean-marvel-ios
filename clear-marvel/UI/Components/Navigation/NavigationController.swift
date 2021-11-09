@@ -27,6 +27,7 @@ public final class NavigationController: UINavigationController {
     }
     
     private func setup() {
+        self.navigationBar.clipsToBounds = true
         navigationBar.barTintColor = UIColor.black
         navigationBar.tintColor = UIColor.white
         navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]

@@ -68,7 +68,7 @@ extension HomeViewControllerTests {
     
     func makeValidCharacters() -> CharactersViewModel {
         let characterThumb = CharacterThumb(path: "jpg", extensionType: "")
-        let results = CharacterResult(id: 0, name: "teste", thumbnail: characterThumb)
+        let results = CharacterResult(id: 0, name: "teste name", description: "teste description", thumbnail: characterThumb)
         let characterData = CharacterData(offSet: 0, total: 0, results: [results])
         let characterModel = CharacterModel(data: characterData)
         return CharactersViewModel(characters: characterModel)
@@ -85,7 +85,7 @@ extension HomeViewControllerTests {
     class ClickSpy {
         var click = 0
         
-        func onClick(item: CharacterResult) {
+        func onClick(item: CharacterResult?) {
             click += 1
         }
     }
